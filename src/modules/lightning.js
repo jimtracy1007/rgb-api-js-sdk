@@ -2,6 +2,7 @@
  * Lightning Network operations module
  * Contains methods for interacting with Lightning Network functionality
  */
+import { decodeRGBLNInvoice } from './utils';
 
 export class LightningMethods {
   /**
@@ -356,5 +357,13 @@ export class LightningMethods {
     this.paymentSubscriptions.delete(subscriptionId);
     
     return true;
+  }
+  /**
+   * 
+   * @param {string} invoice 
+   * @returns {Object}
+   */
+  decodeRGBLNInvoice(invoice){
+    return decodeRGBLNInvoice(invoice);
   }
 }
